@@ -35,7 +35,7 @@ export type PiWebAccessStatus = {
 };
 
 export function getPiWebSearchConfigPath(home?: string): string {
-	const feynmanHome = home ? resolve(home, ".feynman") : getFeynmanHome();
+	const feynmanHome = home ? resolve(home, ".feynman-opl") : getFeynmanHome();
 	return resolve(feynmanHome, "web-search.json");
 }
 

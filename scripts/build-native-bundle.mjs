@@ -278,7 +278,7 @@ function writeLauncher(bundleRoot, target) {
 				"#!/bin/sh",
 				"set -eu",
 				'ROOT="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"',
-				'exec "$ROOT/node/bin/node" "$ROOT/app/bin/feynman.js" "$@"',
+				'exec "$ROOT/node/bin/node" "$ROOT/app/bin/feynman-opl.js" "$@"',
 				"",
 			].join("\n"),
 			"utf8",

@@ -19,8 +19,8 @@ test("loadPiWebAccessConfig returns empty config when Pi web config is missing",
 	assert.deepEqual(loadPiWebAccessConfig(configPath), {});
 });
 
-test("getPiWebSearchConfigPath respects FEYNMAN_HOME semantics", () => {
-	assert.equal(getPiWebSearchConfigPath("/tmp/custom-home"), "/tmp/custom-home/.feynman/web-search.json");
+test("getPiWebSearchConfigPath respects FEYNMAN_OPL_HOME semantics", () => {
+	assert.equal(getPiWebSearchConfigPath("/tmp/custom-home"), "/tmp/custom-home/.feynman-opl/web-search.json");
 });
 
 test("savePiWebAccessConfig merges updates and deletes undefined values", () => {
@@ -58,7 +58,7 @@ test("savePiWebAccessConfig restricts web-search.json permissions", { skip: proc
 test("getPiWebAccessStatus reads Pi web-access config directly", () => {
 	const root = mkdtempSync(join(tmpdir(), "feynman-pi-web-"));
 	const configPath = getPiWebSearchConfigPath(root);
-	mkdirSync(join(root, ".feynman"), { recursive: true });
+	mkdirSync(join(root, ".feynman-opl"), { recursive: true });
 	writeFileSync(
 		configPath,
 		JSON.stringify({
@@ -85,7 +85,7 @@ test("getPiWebAccessStatus reads Pi web-access config directly", () => {
 test("getPiWebAccessStatus reads Gemini routes directly", () => {
 	const root = mkdtempSync(join(tmpdir(), "feynman-pi-web-"));
 	const configPath = getPiWebSearchConfigPath(root);
-	mkdirSync(join(root, ".feynman"), { recursive: true });
+	mkdirSync(join(root, ".feynman-opl"), { recursive: true });
 	writeFileSync(
 		configPath,
 		JSON.stringify({

@@ -97,7 +97,7 @@ export function collectStatusSnapshot(options: DoctorOptions): FeynmanStatusSnap
 
 export function runStatus(options: DoctorOptions): void {
 	const snapshot = collectStatusSnapshot(options);
-	printPanel("Feynman Status", [
+	printPanel("Feynman-OPL Status", [
 		"Current setup summary for the research shell.",
 	]);
 	printSection("Core");
@@ -140,7 +140,7 @@ export function runDoctor(options: DoctorOptions): void {
 	const browserPath = process.env.PUPPETEER_EXECUTABLE_PATH ?? resolveExecutable("google-chrome", BROWSER_FALLBACK_PATHS);
 	const missingPiBits = validatePiInstallation(options.appRoot);
 
-	printPanel("Feynman Doctor", [
+	printPanel("Feynman-OPL Doctor", [
 		"Checks config, auth, runtime wiring, and preview dependencies.",
 	]);
 	console.log(`working dir: ${options.workingDir}`);

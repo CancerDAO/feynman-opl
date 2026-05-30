@@ -31,7 +31,7 @@ jobs:
         run: |
           LOCAL=$(node -p "require('./package.json').version")
           echo "version=$LOCAL" >> "$GITHUB_OUTPUT"
-          PUBLISHED=$(npm view @companion-ai/feynman version 2>/dev/null || true)
+          PUBLISHED=$(npm view @cancerdao/feynman-opl version 2>/dev/null || true)
           if [ "$PUBLISHED" = "$LOCAL" ]; then
             echo "should_publish_npm=false" >> "$GITHUB_OUTPUT"
           else
@@ -85,9 +85,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           LOCAL=$(node -p "require('./package.json').version")
-          PUBLISHED=$(npm view @companion-ai/feynman version 2>/dev/null || true)
+          PUBLISHED=$(npm view @cancerdao/feynman-opl version 2>/dev/null || true)
           if [ "$PUBLISHED" = "$LOCAL" ]; then
-            echo "@companion-ai/feynman@$LOCAL is already published; skipping npm publish."
+            echo "@cancerdao/feynman-opl@$LOCAL is already published; skipping npm publish."
             exit 0
           fi
           npx npm@latest publish --access public --provenance

@@ -18,7 +18,7 @@ function createAppRoot(): string {
 test("syncBundledAssets copies missing bundled files", () => {
 	const appRoot = createAppRoot();
 	const home = mkdtempSync(join(tmpdir(), "feynman-home-"));
-	process.env.FEYNMAN_HOME = home;
+	process.env.FEYNMAN_OPL_HOME = home;
 	const agentDir = join(home, "agent");
 	mkdirSync(agentDir, { recursive: true });
 
@@ -32,7 +32,7 @@ test("syncBundledAssets copies missing bundled files", () => {
 test("syncBundledAssets preserves user-modified files and updates managed files", () => {
 	const appRoot = createAppRoot();
 	const home = mkdtempSync(join(tmpdir(), "feynman-home-"));
-	process.env.FEYNMAN_HOME = home;
+	process.env.FEYNMAN_OPL_HOME = home;
 	const agentDir = join(home, "agent");
 	mkdirSync(agentDir, { recursive: true });
 
@@ -53,7 +53,7 @@ test("syncBundledAssets preserves user-modified files and updates managed files"
 test("syncBundledAssets removes deleted managed files but preserves user-modified stale files", () => {
 	const appRoot = createAppRoot();
 	const home = mkdtempSync(join(tmpdir(), "feynman-home-"));
-	process.env.FEYNMAN_HOME = home;
+	process.env.FEYNMAN_OPL_HOME = home;
 	const agentDir = join(home, "agent");
 	mkdirSync(agentDir, { recursive: true });
 

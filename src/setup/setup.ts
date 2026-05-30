@@ -179,7 +179,7 @@ export async function runSetup(options: SetupOptions): Promise<void> {
 	}
 
 	try {
-		await promptIntro("Feynman setup");
+		await promptIntro("Feynman-OPL setup");
 		await runModelSetup(options.settingsPath, options.authPath);
 		await maybeInstallBundledPackages(options);
 		await maybeInstallOptionalPackages(options);
@@ -207,7 +207,7 @@ export async function runSetup(options: SetupOptions): Promise<void> {
 			printInfo(`Recommended model: ${modelStatus.recommended}`);
 		}
 
-		await promptOutro("Feynman is ready");
+		await promptOutro("Feynman-OPL is ready");
 	} catch (error) {
 		if (error instanceof SetupCancelledError) {
 			printInfo("Setup cancelled.");

@@ -42,7 +42,7 @@ export async function launchPiChat(options: PiRuntimeOptions): Promise<void> {
 	const useBuiltWrapper = existsSync(piCliWrapperPath);
 	const useDevWrapper = !useBuiltWrapper && existsSync(piCliWrapperSourcePath) && existsSync(tsxLoaderPath);
 	if (!useBuiltWrapper && !useDevWrapper) {
-		throw new Error(`Feynman Pi CLI wrapper not found: ${piCliWrapperPath}`);
+		throw new Error(`Feynman-OPL Pi CLI wrapper not found: ${piCliWrapperPath}`);
 	}
 
 	if (process.stdout.isTTY && options.mode !== "rpc") {

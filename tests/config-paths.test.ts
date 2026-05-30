@@ -14,32 +14,32 @@ import {
 	getFeynmanStateDir,
 } from "../src/config/paths.js";
 
-test("getFeynmanHome uses FEYNMAN_HOME env var when set", () => {
-	const previous = process.env.FEYNMAN_HOME;
+test("getFeynmanHome uses FEYNMAN_OPL_HOME env var when set", () => {
+	const previous = process.env.FEYNMAN_OPL_HOME;
 	try {
-		process.env.FEYNMAN_HOME = "/custom/home";
-		assert.equal(getFeynmanHome(), resolve("/custom/home", ".feynman"));
+		process.env.FEYNMAN_OPL_HOME = "/custom/home";
+		assert.equal(getFeynmanHome(), resolve("/custom/home", ".feynman-opl"));
 	} finally {
 		if (previous === undefined) {
-			delete process.env.FEYNMAN_HOME;
+			delete process.env.FEYNMAN_OPL_HOME;
 		} else {
-			process.env.FEYNMAN_HOME = previous;
+			process.env.FEYNMAN_OPL_HOME = previous;
 		}
 	}
 });
 
-test("getFeynmanHome falls back to homedir when FEYNMAN_HOME is unset", () => {
-	const previous = process.env.FEYNMAN_HOME;
+test("getFeynmanHome falls back to homedir when FEYNMAN_OPL_HOME is unset", () => {
+	const previous = process.env.FEYNMAN_OPL_HOME;
 	try {
-		delete process.env.FEYNMAN_HOME;
+		delete process.env.FEYNMAN_OPL_HOME;
 		const home = getFeynmanHome();
-		assert.ok(home.endsWith(".feynman"), `expected path ending in .feynman, got: ${home}`);
+		assert.ok(home.endsWith(".feynman-opl"), `expected path ending in .feynman-opl, got: ${home}`);
 		assert.ok(!home.includes("undefined"), `expected no 'undefined' in path, got: ${home}`);
 	} finally {
 		if (previous === undefined) {
-			delete process.env.FEYNMAN_HOME;
+			delete process.env.FEYNMAN_OPL_HOME;
 		} else {
-			process.env.FEYNMAN_HOME = previous;
+			process.env.FEYNMAN_OPL_HOME = previous;
 		}
 	}
 });

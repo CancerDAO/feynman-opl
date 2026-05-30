@@ -6,7 +6,7 @@ Pi subagent behavior does **not** live here. The source of truth for bundled Pi 
 
 ## Pi subagents
 
-Feynman ships four bundled research subagents:
+Feynman-OPL ships four bundled research subagents:
 
 - `researcher`
 - `reviewer`

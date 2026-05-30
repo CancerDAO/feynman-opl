@@ -24,8 +24,8 @@ test("skills installers expose Codex, repo, and OpenCode scopes", () => {
 	assert.match(powershellInstaller, /ValidateSet\("Codex", "User", "Repo", "OpenCode"\)/);
 	assert.match(powershellInstaller, /\.codex/);
 	assert.match(powershellInstaller, /Codex user skills will be discovered from `\$CODEX_HOME\/skills/);
-	assert.match(powershellInstaller, /\.agents\\skills\\feynman/);
-	assert.match(powershellInstaller, /\.opencode\\skills\\feynman/);
+	assert.match(powershellInstaller, /\.agents\\skills\\feynman-opl/);
+	assert.match(powershellInstaller, /\.opencode\\skills\\feynman-opl/);
 	assert.match(powershellInstaller, /OpenCode project skills will be discovered from \.opencode\/skills/);
 });
 
@@ -81,7 +81,7 @@ test("Unix skills installer writes Codex skills under CODEX_HOME", { skip: proce
 	});
 
 	assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
-	const installDir = join(codexHome, "skills", "feynman");
+	const installDir = join(codexHome, "skills", "feynman-opl");
 	assert.equal(existsSync(join(installDir, "deep-research", "SKILL.md")), true);
 	assert.equal(existsSync(join(installDir, "prompts", "deepresearch.md")), true);
 	assert.match(result.stdout, /Codex user skills will be discovered from \$CODEX_HOME\/skills/);
@@ -108,7 +108,7 @@ test("Unix skills installer writes OpenCode skills under .opencode", { skip: pro
 	});
 
 	assert.equal(result.status, 0, `${result.stdout}\n${result.stderr}`);
-	const installDir = join(projectRoot, ".opencode", "skills", "feynman");
+	const installDir = join(projectRoot, ".opencode", "skills", "feynman-opl");
 	assert.equal(existsSync(join(installDir, "deep-research", "SKILL.md")), true);
 	assert.equal(existsSync(join(installDir, "prompts", "deepresearch.md")), true);
 	assert.match(result.stdout, /OpenCode project skills will be discovered from \.opencode\/skills/);

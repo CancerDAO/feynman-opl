@@ -17,10 +17,10 @@ Opens the session search UI. Supports `resume <sessionPath>` to continue a found
 
 ## Direct file search
 
-Session transcripts are stored as JSONL files in `~/.feynman/sessions/`. Each line is a JSON record with `type` (session, message, model_change) and `message.content` fields.
+Session transcripts are stored as JSONL files in `~/.feynman-opl/sessions/`. Each line is a JSON record with `type` (session, message, model_change) and `message.content` fields.
 
 ```bash
-grep -ril "scaling laws" ~/.feynman/sessions/
+grep -ril "scaling laws" ~/.feynman-opl/sessions/
 ```
 
 For structured search across sessions, use the interactive `/search` command.

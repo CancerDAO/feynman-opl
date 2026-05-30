@@ -40,8 +40,8 @@ export function getUnsupportedNodeVersionLines(version = process.versions.node):
 				? "Install a supported Node.js release from https://nodejs.org, or use the standalone installer:"
 				: `Switch to a supported Node release with \`nvm install ${PREFERRED_NODE_MAJOR} && nvm use ${PREFERRED_NODE_MAJOR}\`, or use the standalone installer:`,
 		isWindows
-			? "irm https://feynman.is/install.ps1 | iex"
-			: "curl -fsSL https://feynman.is/install | bash",
+			? "irm https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install.ps1 | iex"
+			: "curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install.sh | bash",
 	];
 }
 

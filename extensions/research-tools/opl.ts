@@ -40,7 +40,14 @@ function runOpl(args: string[], timeoutMs: number): Promise<OplResult> {
 		execFile(
 			bin,
 			args,
-			{ maxBuffer: 64 * 1024 * 1024, timeout: timeoutMs, env: process.env },
+			// feynman-opl is bound to a single model, so it runs OPL single-model by
+			// default (reviewer = executor; G13 cross-model peer review disabled).
+			// Set OPL_ALLOW_SINGLE_MODEL=0 + two distinct provider keys to re-enable it.
+			{
+				maxBuffer: 64 * 1024 * 1024,
+				timeout: timeoutMs,
+				env: { ...process.env, OPL_ALLOW_SINGLE_MODEL: process.env.OPL_ALLOW_SINGLE_MODEL ?? "1" },
+			},
 			(error, stdout, stderr) => {
 				const raw = (stdout ?? "").toString();
 				const err = (stderr ?? "").toString();

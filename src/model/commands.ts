@@ -628,7 +628,7 @@ async function verifyBedrockCredentialChain(): Promise<void> {
 
 async function configureBedrockProvider(authPath: string): Promise<boolean> {
 	printSection("AWS Credentials: Amazon Bedrock");
-	printInfo("Feynman will verify the AWS SDK credential chain used by Pi's Bedrock provider.");
+	printInfo("Feynman-OPL will verify the AWS SDK credential chain used by Pi's Bedrock provider.");
 	printInfo("Supported sources include AWS_PROFILE, ~/.aws credentials/config, SSO, ECS/IRSA, and EC2 instance roles.");
 
 	try {

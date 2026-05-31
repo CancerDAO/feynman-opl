@@ -16,7 +16,7 @@ import { PI_SUBAGENTS_PATCH_TARGETS, patchPiSubagentsSource, stripPiSubagentBuil
 
 const here = dirname(fileURLToPath(import.meta.url));
 const appRoot = resolve(here, "..");
-const feynmanHome = resolve(process.env.FEYNMAN_HOME ?? homedir(), ".feynman");
+const feynmanHome = resolve(process.env.FEYNMAN_OPL_HOME ?? homedir(), ".feynman-opl");
 const feynmanNpmPrefix = resolve(feynmanHome, "npm-global");
 process.env.FEYNMAN_NPM_PREFIX = feynmanNpmPrefix;
 process.env.NPM_CONFIG_PREFIX = feynmanNpmPrefix;

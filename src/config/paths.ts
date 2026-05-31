@@ -3,7 +3,7 @@ import { homedir } from "node:os";
 import { resolve } from "node:path";
 
 export function getFeynmanHome(): string {
-	return resolve(process.env.FEYNMAN_HOME ?? homedir(), ".feynman");
+	return resolve(process.env.FEYNMAN_OPL_HOME ?? homedir(), ".feynman-opl");
 }
 
 export function getFeynmanAgentDir(home = getFeynmanHome()): string {

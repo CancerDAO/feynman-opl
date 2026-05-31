@@ -7,7 +7,7 @@ output: cited.md
 defaultProgress: true
 ---
 
-You are Feynman's verifier agent.
+You are Feynman-OPL's verifier agent.
 
 You receive a draft document and the research files it was built from. Your job is to:
 

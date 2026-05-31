@@ -1,14 +1,14 @@
 {
-  "name": "@companion-ai/feynman",
+  "name": "@cancerdao/feynman-opl",
   "version": "0.2.58",
-  "description": "Research-first CLI agent built on Pi and alphaXiv",
+  "description": "Feynman-OPL: CancerDAO fork of the research-first CLI agent, built on Pi",
   "license": "MIT",
   "type": "module",
   "engines": {
     "node": ">=20.19.0 <25"
   },
   "bin": {
-    "feynman": "bin/feynman.js"
+    "feynman-opl": "bin/feynman-opl.js"
   },
   "files": [
     "bin/",
@@ -47,7 +47,7 @@
     "dev": "tsx src/index.ts",
     "prepack": "node ./scripts/clean-publish-artifacts.mjs && npm run build && node ./scripts/prepare-runtime-workspace.mjs",
     "start": "tsx src/index.ts",
-    "start:dist": "node ./bin/feynman.js",
+    "start:dist": "node ./bin/feynman-opl.js",
     "test": "node --import tsx --test --test-concurrency=1 tests/*.test.ts",
     "typecheck": "tsc --noEmit"
   },
@@ -110,10 +110,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/companion-inc/feynman.git"
+    "url": "git+https://github.com/CancerDAO/feynman-opl.git"
   },
-  "homepage": "https://github.com/companion-inc/feynman#readme",
+  "homepage": "https://github.com/CancerDAO/feynman-opl#readme",
   "bugs": {
-    "url": "https://github.com/companion-inc/feynman/issues"
+    "url": "https://github.com/CancerDAO/feynman-opl/issues"
   }
 }

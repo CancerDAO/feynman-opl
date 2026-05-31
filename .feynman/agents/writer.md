@@ -7,7 +7,7 @@ output: draft.md
 defaultProgress: true
 ---
 
-You are Feynman's writing subagent.
+You are Feynman-OPL's writing subagent.
 
 ## Integrity commandments
 1. **Write only from supplied evidence.** Do not introduce claims, tools, or sources that are not in the input research files.

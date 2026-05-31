@@ -1,13 +1,16 @@
 <p align="center">
-  <a href="https://feynman.is">
-    <img src="assets/hero.png" alt="Feynman CLI" width="800" />
+  <a href="https://github.com/CancerDAO/feynman-opl">
+    <img src="assets/hero.png" alt="Feynman-OPL CLI" width="800" />
   </a>
 </p>
-<p align="center">The open source AI research agent.</p>
+<p align="center">Feynman-OPL: CancerDAO fork of the open-source AI research agent.</p>
 <p align="center">
-  <a href="https://feynman.is/docs"><img alt="Docs" src="https://img.shields.io/badge/docs-feynman.is-0d9668?style=flat-square" /></a>
-  <a href="https://github.com/companion-inc/feynman/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/companion-inc/feynman?style=flat-square" /></a>
+  <a href="https://github.com/CancerDAO/feynman-opl"><img alt="Docs" src="https://img.shields.io/badge/docs-github-0d9668?style=flat-square" /></a>
+  <a href="https://github.com/CancerDAO/feynman-opl/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/CancerDAO/feynman-opl?style=flat-square" /></a>
 </p>
+
+
+> **Fork provenance:** Feynman-OPL is CancerDAO's MIT-licensed fork of [companion-inc/feynman](https://github.com/companion-inc/feynman), built on [Pi](https://github.com/badlogic/pi-mono) and alphaXiv. This pass is a pure rebrand; OPL (oncology research) integration is tracked separately.
 
 ---
 
@@ -16,24 +19,24 @@
 **macOS / Linux:**
 
 ```bash
-curl -fsSL https://feynman.is/install | bash
+curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install.sh | bash
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-irm https://feynman.is/install.ps1 | iex
+irm https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install.ps1 | iex
 ```
 
-The one-line installer fetches the latest tagged release. To pin a version, pass it explicitly, for example `curl -fsSL https://feynman.is/install | bash -s -- 0.2.35`.
+The one-line installer fetches the latest tagged release. To pin a version, pass it explicitly, for example `curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install.sh | bash -s -- 0.2.35`.
 
 The installer downloads a standalone native bundle with its own Node.js runtime.
 
-To upgrade the standalone app later, rerun the installer. `feynman update` only refreshes installed Pi packages inside Feynman's environment; it does not replace the standalone runtime bundle itself.
+To upgrade the standalone app later, rerun the installer. `feynman-opl update` only refreshes installed Pi packages inside Feynman-OPL's environment; it does not replace the standalone runtime bundle itself.
 
-To uninstall the standalone app, remove the launcher and runtime bundle, then optionally remove `~/.feynman` if you also want to delete settings, sessions, and installed package state. If you also want to delete alphaXiv login state, remove `~/.ahub`. See the installation guide for platform-specific paths.
+To uninstall the standalone app, remove the launcher and runtime bundle, then optionally remove `~/.feynman-opl` if you also want to delete settings, sessions, and installed package state. If you also want to delete alphaXiv login state, remove `~/.ahub`. See the installation guide for platform-specific paths.
 
-Local models are supported through the setup flow. For LM Studio, run `feynman setup`, choose `LM Studio`, and keep the default `http://localhost:1234/v1` unless you changed the server port. For LiteLLM, choose `LiteLLM Proxy` and keep the default `http://localhost:4000/v1`. For Ollama or vLLM, choose `Custom provider (baseUrl + API key)`, use `openai-completions`, and point it at the local `/v1` endpoint.
+Local models are supported through the setup flow. For LM Studio, run `feynman-opl setup`, choose `LM Studio`, and keep the default `http://localhost:1234/v1` unless you changed the server port. For LiteLLM, choose `LiteLLM Proxy` and keep the default `http://localhost:4000/v1`. For Ollama or vLLM, choose `Custom provider (baseUrl + API key)`, use `openai-completions`, and point it at the local `/v1` endpoint.
 
 ### Skills Only
 
@@ -42,27 +45,27 @@ If you want just the research skills without the full terminal app:
 **macOS / Linux:**
 
 ```bash
-curl -fsSL https://feynman.is/install-skills | bash
+curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.sh | bash
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-irm https://feynman.is/install-skills.ps1 | iex
+irm https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.ps1 | iex
 ```
 
-That installs the skill library into `~/.codex/skills/feynman` for Codex. You can also name the Codex target explicitly:
+That installs the skill library into `~/.codex/skills/feynman-opl` for Codex. You can also name the Codex target explicitly:
 
 **macOS / Linux:**
 
 ```bash
-curl -fsSL https://feynman.is/install-skills | bash -s -- --codex
+curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.sh | bash -s -- --codex
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-& ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope Codex
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.ps1))) -Scope Codex
 ```
 
 For a repo-local Claude/agent install instead:
@@ -70,58 +73,74 @@ For a repo-local Claude/agent install instead:
 **macOS / Linux:**
 
 ```bash
-curl -fsSL https://feynman.is/install-skills | bash -s -- --repo
+curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.sh | bash -s -- --repo
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-& ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope Repo
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.ps1))) -Scope Repo
 ```
 
-That installs into `.agents/skills/feynman` under the current repository.
+That installs into `.agents/skills/feynman-opl` under the current repository.
 
 For an OpenCode project-local install instead:
 
 **macOS / Linux:**
 
 ```bash
-curl -fsSL https://feynman.is/install-skills | bash -s -- --opencode
+curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.sh | bash -s -- --opencode
 ```
 
 **Windows (PowerShell):**
 
 ```powershell
-& ([scriptblock]::Create((irm https://feynman.is/install-skills.ps1))) -Scope OpenCode
+& ([scriptblock]::Create((irm https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install-skills.ps1))) -Scope OpenCode
 ```
 
-That installs into `.opencode/skills/feynman` under the current repository.
+That installs into `.opencode/skills/feynman-opl` under the current repository.
 
-These installers download the bundled `skills/` and `prompts/` trees plus the repo guidance files referenced by those skills. They do not install the Feynman terminal, bundled Node runtime, auth storage, or Pi packages.
+These installers download the bundled `skills/` and `prompts/` trees plus the repo guidance files referenced by those skills. They do not install the Feynman-OPL terminal, bundled Node runtime, auth storage, or Pi packages.
 
 ---
 
 ### What you type → what happens
 
 ```
-$ feynman "what do we know about scaling laws"
+$ feynman-opl "what do we know about scaling laws"
 → Searches papers and web, produces a cited research brief
 
-$ feynman deepresearch "mechanistic interpretability"
+$ feynman-opl deepresearch "mechanistic interpretability"
 → Multi-agent investigation with parallel researchers, synthesis, verification
 
-$ feynman lit "RLHF alternatives"
+$ feynman-opl lit "RLHF alternatives"
 → Literature review with consensus, disagreements, open questions
 
-$ feynman audit 2401.12345
+$ feynman-opl audit 2401.12345
 → Compares paper claims against the public codebase
 
-$ feynman replicate "chain-of-thought improves math"
+$ feynman-opl replicate "chain-of-thought improves math"
 → Replicates experiments on local or cloud GPUs
 
-$ feynman recipe "fine-tune a small model for math reasoning"
+$ feynman-opl recipe "fine-tune a small model for math reasoning"
 → Finds ranked, implementable ML training recipes from papers, datasets, docs, and code
+
+$ feynman-opl opl ./patients/jane-doe "next-line options"
+→ Runs the gated OPL oncology pipeline and delivers an attested, PMID-anchored research brief
 ```
+
+---
+
+### Oncology research (OPL client)
+
+Feynman-OPL is a **client** for the [OPL oncology engine](https://github.com/CancerDAO/opl-cancer). For a cancer patient's organized records it orchestrates OPL's gated pipeline — PI "Sid" + a named expert team + Henry's IRB-style audit + mechanical safety gates — and delivers an **attested, PMID-anchored research brief (not treatment advice; the patient is the sole decision authority)**.
+
+```bash
+pip install opl-cancer          # the Python engine (Python >= 3.11); set an executor + a distinct reviewer key
+feynman-opl opl ./patients/<case> "the patient's goal"
+```
+
+The agent drives the engine through the `opl_*` tools (`opl_preflight → opl_readiness → opl_go → opl_run → opl_audit → opl_deliver → opl_attest`). Medical evidence comes **only** from gated OPL outputs — it is never produced by the generic research subagents, and a fail-closed gate is surfaced, never bypassed. Records must be organized first (OPL is downstream of intake). Point `OPL_CANCER_BIN` at the executable if it isn't on `PATH`.
 
 ---
 
@@ -171,17 +190,17 @@ Four bundled research agents, dispatched automatically.
 
 ### How it works
 
-Built on [Pi](https://github.com/badlogic/pi-mono) for the agent runtime, [alphaXiv](https://www.alphaxiv.org/) for paper search and analysis, and CLI tools for compute and execution. Runtime resources follow Pi's documented package model for [packages](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/packages.md), [extensions](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/extensions.md), and [skills](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/skills.md). Hugging Face inspection uses the public [Hub API endpoints](https://huggingface.co/docs/hub/api) and `HF_TOKEN` / `HUGGINGFACE_HUB_TOKEN` environment variables documented by [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/main/en/package_reference/environment_variables). The ML recipe workflow was informed by the open-source [Hugging Face `ml-intern`](https://github.com/huggingface/ml-intern) research-agent repo, but is implemented as native Feynman prompts, skills, and read-only tools. Every output is source-grounded — claims link to papers, docs, or repos with direct URLs.
+Built on [Pi](https://github.com/badlogic/pi-mono) for the agent runtime, [alphaXiv](https://www.alphaxiv.org/) for paper search and analysis, and CLI tools for compute and execution. Runtime resources follow Pi's documented package model for [packages](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/packages.md), [extensions](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/extensions.md), and [skills](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/skills.md). Hugging Face inspection uses the public [Hub API endpoints](https://huggingface.co/docs/hub/api) and `HF_TOKEN` / `HUGGINGFACE_HUB_TOKEN` environment variables documented by [`huggingface_hub`](https://huggingface.co/docs/huggingface_hub/main/en/package_reference/environment_variables). The ML recipe workflow was informed by the open-source [Hugging Face `ml-intern`](https://github.com/huggingface/ml-intern) research-agent repo, but is implemented as native Feynman-OPL prompts, skills, and read-only tools. Every output is source-grounded — claims link to papers, docs, or repos with direct URLs.
 
 ---
 
 ### Star History
 
-<a href="https://www.star-history.com/?repos=companion-inc%2Ffeynman&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=CancerDAO%2Ffeynman-opl&type=date&legend=top-left">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=companion-inc/feynman&type=date&theme=dark&legend=top-left" />
-    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=companion-inc/feynman&type=date&legend=top-left" />
-    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=companion-inc/feynman&type=date&legend=top-left" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=CancerDAO/feynman-opl&type=date&theme=dark&legend=top-left" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=CancerDAO/feynman-opl&type=date&legend=top-left" />
+    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=CancerDAO/feynman-opl&type=date&legend=top-left" />
   </picture>
 </a>
 
@@ -192,8 +211,8 @@ Built on [Pi](https://github.com/badlogic/pi-mono) for the agent runtime, [alpha
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the full contributor guide.
 
 ```bash
-git clone https://github.com/companion-inc/feynman.git
-cd feynman
+git clone https://github.com/CancerDAO/feynman-opl.git
+cd feynman-opl
 nvm use || nvm install
 npm install
 npm test
@@ -201,4 +220,4 @@ npm run typecheck
 npm run build
 ```
 
-[Docs](https://feynman.is/docs) · [Release Notes](RELEASES.md) · [MIT License](LICENSE)
+[Docs](https://github.com/CancerDAO/feynman-opl) · [Release Notes](RELEASES.md) · [MIT License](LICENSE)

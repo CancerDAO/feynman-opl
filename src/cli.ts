@@ -245,7 +245,7 @@ async function handlePackagesCommand(subcommand: string | undefined, args: strin
 	);
 
 	if (!subcommand || subcommand === "list") {
-		printPanel("Feynman Packages", [
+		printPanel("Feynman-OPL Packages", [
 			"Core packages are installed by default to keep first-run setup fast.",
 		]);
 		printSection("Core");
@@ -526,7 +526,7 @@ export async function main(): Promise<void> {
 	const sessionDir = resolve(values["session-dir"] ?? getDefaultSessionDir(feynmanHome));
 	const feynmanSettingsPath = resolve(feynmanAgentDir, "settings.json");
 	const feynmanAuthPath = resolve(feynmanAgentDir, "auth.json");
-	const { defaultThinkingLevel, launchThinkingLevel } = resolveThinkingConfig(values.thinking ?? process.env.FEYNMAN_THINKING);
+	const { defaultThinkingLevel, launchThinkingLevel } = resolveThinkingConfig(values.thinking ?? process.env.FEYNMAN_OPL_THINKING);
 
 	normalizeFeynmanSettings(feynmanSettingsPath, bundledSettingsPath, defaultThinkingLevel, feynmanAuthPath);
 
@@ -636,7 +636,7 @@ export async function main(): Promise<void> {
 		return;
 	}
 
-	const explicitModelSpec = values.model ?? process.env.FEYNMAN_MODEL;
+	const explicitModelSpec = values.model ?? process.env.FEYNMAN_OPL_MODEL;
 	const explicitServiceTier = normalizeServiceTier(values["service-tier"] ?? process.env.FEYNMAN_SERVICE_TIER);
 	const mode = values.mode;
 	if (mode !== undefined && mode !== "text" && mode !== "json" && mode !== "rpc") {

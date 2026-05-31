@@ -1,13 +1,13 @@
-# Contributing to Feynman
+# Contributing to Feynman-OPL
 
-Feynman is a research-first CLI built on Pi and alphaXiv. This guide is for humans and agents contributing code, prompts, skills, docs, installers, or workflow behavior to the repository.
+Feynman-OPL is a research-first CLI built on Pi and alphaXiv. This guide is for humans and agents contributing code, prompts, skills, docs, installers, or workflow behavior to the repository.
 
 ## Quick Links
 
-- GitHub: https://github.com/companion-inc/feynman
-- Docs: https://feynman.is/docs
+- GitHub: https://github.com/CancerDAO/feynman-opl
+- Docs: https://github.com/CancerDAO/feynman-opl
 - Repo agent contract: [AGENTS.md](AGENTS.md)
-- Issues: https://github.com/companion-inc/feynman/issues
+- Issues: https://github.com/CancerDAO/feynman-opl/issues
 
 ## What Goes Where
 

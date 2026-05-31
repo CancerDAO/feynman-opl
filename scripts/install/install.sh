@@ -185,7 +185,7 @@ resolve_release_metadata() {
   normalized_version="$(normalize_version "$VERSION")"
 
   if [ "$normalized_version" = "latest" ]; then
-    release_page="$(download_text "https://github.com/companion-inc/feynman/releases/latest")"
+    release_page="$(download_text "https://github.com/CancerDAO/feynman-opl/releases/latest")"
     resolved_version="$(printf '%s\n' "$release_page" | sed -n 's@.*releases/tag/v\([0-9][^"<>[:space:]]*\).*@\1@p' | head -n 1)"
 
     if [ -z "$resolved_version" ]; then
@@ -198,7 +198,7 @@ resolve_release_metadata() {
 
   bundle_name="feynman-${resolved_version}-${asset_target}"
   archive_name="${bundle_name}.${archive_extension}"
-  download_url="${FEYNMAN_INSTALL_BASE_URL:-https://github.com/companion-inc/feynman/releases/download/v${resolved_version}}/${archive_name}"
+  download_url="${FEYNMAN_OPL_INSTALL_BASE_URL:-https://github.com/CancerDAO/feynman-opl/releases/download/v${resolved_version}}/${archive_name}"
 
   printf '%s\n%s\n%s\n%s\n' "$resolved_version" "$bundle_name" "$archive_name" "$download_url"
 }
@@ -261,7 +261,7 @@ This usually means the release exists, but not all platform bundles were uploade
 Workarounds:
   - try again after the release finishes publishing
   - pass the latest published version explicitly, e.g.:
-    curl -fsSL https://feynman.is/install | bash -s -- 0.2.31
+    curl -fsSL https://raw.githubusercontent.com/CancerDAO/feynman-opl/main/scripts/install/install.sh | bash -s -- 0.2.31
 EOF
   exit 1
 fi

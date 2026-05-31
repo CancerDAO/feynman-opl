@@ -124,7 +124,23 @@ $ feynman-opl replicate "chain-of-thought improves math"
 
 $ feynman-opl recipe "fine-tune a small model for math reasoning"
 → Finds ranked, implementable ML training recipes from papers, datasets, docs, and code
+
+$ feynman-opl opl ./patients/jane-doe "next-line options"
+→ Runs the gated OPL oncology pipeline and delivers an attested, PMID-anchored research brief
 ```
+
+---
+
+### Oncology research (OPL client)
+
+Feynman-OPL is a **client** for the [OPL oncology engine](https://github.com/CancerDAO/opl-cancer). For a cancer patient's organized records it orchestrates OPL's gated pipeline — PI "Sid" + a named expert team + Henry's IRB-style audit + mechanical safety gates — and delivers an **attested, PMID-anchored research brief (not treatment advice; the patient is the sole decision authority)**.
+
+```bash
+pip install opl-cancer          # the Python engine (Python >= 3.11); set an executor + a distinct reviewer key
+feynman-opl opl ./patients/<case> "the patient's goal"
+```
+
+The agent drives the engine through the `opl_*` tools (`opl_preflight → opl_readiness → opl_go → opl_run → opl_audit → opl_deliver → opl_attest`). Medical evidence comes **only** from gated OPL outputs — it is never produced by the generic research subagents, and a fail-closed gate is surfaced, never bypassed. Records must be organized first (OPL is downstream of intake). Point `OPL_CANCER_BIN` at the executable if it isn't on `PATH`.
 
 ---
 
